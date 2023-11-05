@@ -1,18 +1,17 @@
 package com.github.switcherapi.benchmark.switcher_online;
 
-import static com.github.switcherapi.benchmark.switcher_online.Features.*;
-
+import com.github.switcherapi.benchmark.Fail;
+import com.github.switcherapi.client.ContextBuilder;
 import com.github.switcherapi.client.model.SwitcherBuilder;
 import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 
-import com.github.switcherapi.benchmark.Fail;
-import com.github.switcherapi.client.ContextBuilder;
+import static com.github.switcherapi.benchmark.switcher_online.Features.*;
 
 @State(Scope.Benchmark)
-public class SwitcherOnlineSDKState {
+public class SwitcherOnlineThrottleSDKState {
 
 	private SwitcherBuilder switcher;
 	
@@ -26,16 +25,16 @@ public class SwitcherOnlineSDKState {
 				.component("benchmark"));
 		
 		initializeClient();
-		switcher = getSwitcher(MY_ONLINE_SWITCHER);
+		switcher = getSwitcher(MY_ONLINE_SWITCHER).throttle(500);
     }
-	
+
 	public void run() {
 		if (!switcher.isItOn())
 			throw new Fail();
 	}
 	
 	public static void main(String[] args) {
-		SwitcherOnlineSDKState state = new SwitcherOnlineSDKState();
+		SwitcherOnlineThrottleSDKState state = new SwitcherOnlineThrottleSDKState();
 		state.doSetup();
 		state.run();
 	}

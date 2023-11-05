@@ -30,7 +30,7 @@ public class SplitSDKState {
                 .build();
 		
 		try {
-			SplitFactory splitFactory = SplitFactoryBuilder.build("YOUR_SDK_API_KEY",config);
+			SplitFactory splitFactory = SplitFactoryBuilder.build("API_KEY", config);
 			client = splitFactory.client();
 		} catch (IOException | URISyntaxException e) {
 			throw new Fail();

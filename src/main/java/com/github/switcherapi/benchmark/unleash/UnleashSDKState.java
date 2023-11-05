@@ -11,6 +11,8 @@ import io.getunleash.DefaultUnleash;
 import io.getunleash.Unleash;
 import io.getunleash.util.UnleashConfig;
 
+import java.util.Objects;
+
 @State(Scope.Benchmark)
 public class UnleashSDKState {
 
@@ -21,8 +23,8 @@ public class UnleashSDKState {
 		UnleashConfig config =
                 UnleashConfig.builder()
                         .appName("test")
-                        .unleashAPI("http://http://unleash.org")
-                        .backupFile(getClass().getResource("/unleash-sdk.json").getFile())
+                        .unleashAPI("http://unleash.org")
+                        .backupFile(Objects.requireNonNull(getClass().getResource("/unleash-sdk.json")).getFile())
                         .build();
 
 		unleash = new DefaultUnleash(config);
