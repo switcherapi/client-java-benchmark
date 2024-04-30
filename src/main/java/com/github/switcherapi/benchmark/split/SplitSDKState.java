@@ -30,7 +30,7 @@ public class SplitSDKState {
                 .build();
 		
 		try {
-			SplitFactory splitFactory = SplitFactoryBuilder.build("API_KEY", config);
+			SplitFactory splitFactory = SplitFactoryBuilder.build("[API_KEY]", config);
 			client = splitFactory.client();
 		} catch (IOException | URISyntaxException e) {
 			throw new Fail();
@@ -43,8 +43,9 @@ public class SplitSDKState {
 	}
 	
 	public void run() {
-		if (client.getTreatment("FEATURE", "").equals("on"))
+		if (client.getTreatment("FEATURE", "").equals("on")) {
 			throw new Fail();
+		}
 	}
 	
 	public static void main(String[] args) {

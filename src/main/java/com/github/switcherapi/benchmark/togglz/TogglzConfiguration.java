@@ -15,7 +15,7 @@ public class TogglzConfiguration implements TogglzConfig {
     }
 
     public StateRepository getStateRepository() {
-        return new FileBasedStateRepository(new File(getClass().getResource("/togglz-sdk.properties").getFile()));
+        return new FileBasedStateRepository(new File("./src/main/resources/togglz-sdk.properties"));
     }
 
     public UserProvider getUserProvider() {

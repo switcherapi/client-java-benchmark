@@ -15,7 +15,6 @@ public class TogglzSDKState {
 	
 	private FeatureManager featureManager;
 	
-	@SuppressWarnings("unchecked")
 	@Setup(Level.Trial)
 	public void doSetup() {
 		featureManager = new FeatureManagerBuilder()
@@ -26,8 +25,9 @@ public class TogglzSDKState {
 	}
 	
 	public void run() {
-		if (!featureManager.isActive(Features.MY_FEATURE))
+		if (!featureManager.isActive(Features.MY_FEATURE)) {
 			throw new Fail();
+		}
 	}
 	
 	public static void main(String[] args) {

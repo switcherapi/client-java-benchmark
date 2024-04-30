@@ -18,23 +18,28 @@ public class HarnessSDKState {
     @Setup(Level.Trial)
     public void doSetup() {
         try {
-            cfClient = new CfClient("API_KEY");
+            cfClient = new CfClient("[API-KEY]");
             cfClient.waitForInitialization();
 
             target = Target.builder()
-                    .identifier("javasdk")
-                    .name("JavaSDK")
-                    .attribute("location", "emea")
-                    .build();
-        } catch (FeatureFlagInitializeException | InterruptedException e) {
+                .identifier("javasdk")
+                .name("JavaSDK")
+                .attribute("location", "emea")
+                .build();
+        } catch (FeatureFlagInitializeException e) {
+            throw new Fail();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
             throw new Fail();
         }
     }
 
     public void run() {
-        boolean result = cfClient.boolVariation("my_flag", target, false);
-        if (!result)
+        boolean result = cfClient.boolVariation("feature_flag", target, false);
+
+        if (!result) {
             throw new Fail();
+        }
     }
 
     public static void main(String[] args) {

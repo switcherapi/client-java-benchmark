@@ -3,9 +3,9 @@ package com.github.switcherapi.benchmark;
 import com.github.switcherapi.benchmark.harness.HarnessSDKState;
 import com.github.switcherapi.benchmark.optimizely.OptimizelySDKState;
 import com.github.switcherapi.benchmark.split.SplitSDKState;
-import com.github.switcherapi.benchmark.switcher.SwitcherOfflineSDKState;
-import com.github.switcherapi.benchmark.switcher_online.SwitcherOnlineSDKState;
-import com.github.switcherapi.benchmark.switcher_throttle.SwitcherOnlineThrottleSDKState;
+import com.github.switcherapi.benchmark.switcher_local.SwitcherLocalSDKState;
+import com.github.switcherapi.benchmark.switcher_remote.SwitcherRemoteSDKState;
+import com.github.switcherapi.benchmark.switcher_remote.SwitcherRemoteThrottleSDKState;
 import com.github.switcherapi.benchmark.togglz.TogglzSDKState;
 import com.github.switcherapi.benchmark.unleash.UnleashSDKState;
 import org.openjdk.jmh.annotations.*;
@@ -48,22 +48,17 @@ public class FeatureFlagBenchmark {
 	}
 
 	@Benchmark
-    public void testSwitcherOffline(SwitcherOfflineSDKState state) {
+    public void testSwitcherLocal(SwitcherLocalSDKState state) {
 		state.run();
     }
 
 	@Benchmark
-    public void testSwitcherThrottle(SwitcherOnlineThrottleSDKState state) {
+    public void testSwitcherRemote(SwitcherRemoteSDKState state) {
 		state.run();
     }
 
 	@Benchmark
-    public void testSwitcherOnline(SwitcherOnlineSDKState state) {
-		state.run();
-    }
-
-	@Benchmark
-    public void testSwitcherOnlineThrottle(SwitcherOnlineThrottleSDKState state) {
+    public void testSwitcherRemoteThrottle(SwitcherRemoteThrottleSDKState state) {
 		state.run();
     }
 	

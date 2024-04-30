@@ -1,4 +1,4 @@
-package com.github.switcherapi.benchmark.switcher_online;
+package com.github.switcherapi.benchmark.switcher_remote;
 
 import com.github.switcherapi.client.SwitcherContextBase;
 import com.github.switcherapi.client.SwitcherKey;

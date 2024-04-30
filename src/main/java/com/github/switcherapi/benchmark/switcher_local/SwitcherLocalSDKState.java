@@ -1,18 +1,18 @@
-package com.github.switcherapi.benchmark.switcher_online;
+package com.github.switcherapi.benchmark.switcher_local;
 
-import static com.github.switcherapi.benchmark.switcher_online.Features.*;
-
+import com.github.switcherapi.benchmark.Fail;
+import com.github.switcherapi.client.ContextBuilder;
 import com.github.switcherapi.client.model.SwitcherBuilder;
 import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 
-import com.github.switcherapi.benchmark.Fail;
-import com.github.switcherapi.client.ContextBuilder;
+import static com.github.switcherapi.benchmark.switcher_local.Features.MY_SWITCHER;
+import static com.github.switcherapi.client.SwitcherContextBase.*;
 
 @State(Scope.Benchmark)
-public class SwitcherOnlineSDKState {
+public class SwitcherLocalSDKState {
 
 	private SwitcherBuilder switcher;
 	
@@ -20,22 +20,22 @@ public class SwitcherOnlineSDKState {
     public void doSetup() {
 		configure(ContextBuilder.builder()
 				.contextLocation(Features.class.getName())
-				.url("https://switcherapi.com/api")
-				.apiKey("API_KEY")
-				.domain("Playground")
-				.component("benchmark"));
+				.snapshotLocation("src/main/resources")
+				.environment("switcher-sdk")
+				.local(true));
 		
 		initializeClient();
-		switcher = getSwitcher(MY_ONLINE_SWITCHER);
+		switcher = getSwitcher(MY_SWITCHER);
     }
 	
 	public void run() {
-		if (!switcher.isItOn())
+		if (!switcher.isItOn()) {
 			throw new Fail();
+		}
 	}
 	
 	public static void main(String[] args) {
-		SwitcherOnlineSDKState state = new SwitcherOnlineSDKState();
+		SwitcherLocalSDKState state = new SwitcherLocalSDKState();
 		state.doSetup();
 		state.run();
 	}
