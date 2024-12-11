@@ -21,7 +21,12 @@ import java.util.concurrent.TimeUnit;
 @Measurement(iterations = 1, time = 5)
 @Warmup(iterations = 1, time = 5)
 public class FeatureFlagBenchmark {
-	
+
+	@Benchmark
+	public void testSimpleBool(SimpleBoolState state) {
+		state.run();
+	}
+
 	@Benchmark
 	public void testOptimizely(OptimizelySDKState state) {
 		state.run();

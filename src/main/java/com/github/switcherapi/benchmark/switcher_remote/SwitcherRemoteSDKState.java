@@ -18,9 +18,9 @@ public class SwitcherRemoteSDKState {
 	@Setup(Level.Trial)
     public void doSetup() {
 		configure(ContextBuilder.builder()
-				.contextLocation(Features.class.getName())
+				.context(Features.class.getName())
 				.url("https://api.switcherapi.com")
-				.apiKey("[API-KEY]")
+				.apiKey("[API_KEY]")
 				.domain("Playground")
 				.component("benchmark"));
 		

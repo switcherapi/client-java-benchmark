@@ -19,7 +19,7 @@ public class SwitcherLocalSDKState {
 	@Setup(Level.Trial)
     public void doSetup() {
 		configure(ContextBuilder.builder()
-				.contextLocation(Features.class.getName())
+				.context(Features.class.getName())
 				.snapshotLocation("src/main/resources")
 				.environment("switcher-sdk")
 				.local(true));

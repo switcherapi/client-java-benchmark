@@ -23,16 +23,17 @@ In-memory configuration loaded from file.<br>
 These tests are 100% remote.<br>
 
 ## Operations /s in 5s
-| Benchmark                                       | Type   | Mode  | Score          | Units |
-|:------------------------------------------------|:-------|:------|:---------------|:------|
-| FeatureFlagBenchmark.testSwitcherRemoteThrottle | Async  | thrpt | 15,255,667.081 | ops/s |
-| FeatureFlagBenchmark.testSwitcherLocal          | Local  | thrpt | 14,254,786.801 | ops/s |
-| FeatureFlagBenchmark.testHarness                | Async  | thrpt | 2,486,530.012  | ops/s |
-| FeatureFlagBenchmark.testSplit                  | Local  | thrpt | 2,054,740.656  | ops/s |
-| FeatureFlagBenchmark.testUnleash                | Local  | thrpt | 1,283,176.606  | ops/s |
-| FeatureFlagBenchmark.testTogglz                 | Local  | thrpt | 181,059.633    | ops/s |
-| FeatureFlagBenchmark.testOptimizely             | Async  | thrpt | 233,482.488    | ops/s |
-| FeatureFlagBenchmark.testSwitcherRemote         | Remote | thrpt | 187.247        | ops/s |
+| Benchmark                                       | Type   | Mode  | Score           | Units |
+|:------------------------------------------------|:-------|:------|:----------------|:------|
+| Simple Boolean (static feature flag)            | Local  | thrpt | 585,493,539.045 | ops/s |
+| FeatureFlagBenchmark.testSwitcherRemoteThrottle | Async  | thrpt | 34,327,818.480  | ops/s |
+| FeatureFlagBenchmark.testSwitcherLocal          | Local  | thrpt | 17,861,430.894  | ops/s |
+| FeatureFlagBenchmark.testHarness                | Async  | thrpt | 5,993,383.681   | ops/s |
+| FeatureFlagBenchmark.testSplit                  | Local  | thrpt | 5,176,741.297   | ops/s |
+| FeatureFlagBenchmark.testUnleash                | Local  | thrpt | 2,674,586.707   | ops/s |
+| FeatureFlagBenchmark.testOptimizely             | Async  | thrpt | 480,875.500     | ops/s |
+| FeatureFlagBenchmark.testTogglz                 | Local  | thrpt | 419,103.750     | ops/s |
+| FeatureFlagBenchmark.testSwitcherRemote         | Remote | thrpt | 187.247         | ops/s |
 
 ### Switcher Client SDK:
  - when Async, can be up to 6x faster than the other SDKs.

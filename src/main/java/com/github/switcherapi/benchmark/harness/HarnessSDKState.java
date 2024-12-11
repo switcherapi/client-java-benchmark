@@ -18,7 +18,7 @@ public class HarnessSDKState {
     @Setup(Level.Trial)
     public void doSetup() {
         try {
-            cfClient = new CfClient("[API-KEY]");
+            cfClient = new CfClient("[API_KEY]");
             cfClient.waitForInitialization();
 
             target = Target.builder()
@@ -37,7 +37,7 @@ public class HarnessSDKState {
     public void run() {
         boolean result = cfClient.boolVariation("feature_flag", target, false);
 
-        if (!result) {
+        if (result) {
             throw new Fail();
         }
     }
