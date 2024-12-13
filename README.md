@@ -37,7 +37,7 @@ These tests are 100% remote.<br>
 
 ### Switcher Client SDK:
  - when Async, can be up to 6x faster than the other SDKs.
- - when Local, can be up to 7x faster than the other SDKs.
+ - when Local, can be up to 3x faster than the other SDKs.
  - 100% remote can only be enabled with Switcher Client SDK.
 
 ## Average calls/ns in 5s
