@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 @Fork(value = 1)
 @Measurement(iterations = 1, time = 5)
 @Warmup(iterations = 1, time = 5)
-public class FeatureFlagBenchmark {
+public class ClientJavaBenchmark {
 
 	@Benchmark
 	public void testSimpleBool(SimpleBoolState state) {
@@ -69,7 +69,7 @@ public class FeatureFlagBenchmark {
 	
     public static void main(String[] args) throws Exception {
     	Options opt = new OptionsBuilder()
-                .include(FeatureFlagBenchmark.class.getSimpleName())
+                .include(ClientJavaBenchmark.class.getSimpleName())
                 .build();
     	
     	new Runner(opt).run();

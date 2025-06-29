@@ -25,7 +25,7 @@ public class SwitcherRemoteSDKState {
 				.component("benchmark"));
 		
 		initializeClient();
-		switcher = getSwitcher(MY_ONLINE_SWITCHER).build();
+		switcher = getSwitcher(MY_ONLINE_SWITCHER);
     }
 	
 	public void run() {

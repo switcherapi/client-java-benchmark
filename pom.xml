@@ -2,13 +2,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.switcherapi.benchmark</groupId>
-	<artifactId>feature-flag-benchmark</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>client-java-benchmark</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	
-	<name>Feature Flag Benchmark</name>
+	<name>Client Java Benchmark</name>
 	<description>Evaluate performance of 5 different Feature Flag SDKs</description>
-	<url>https://github.com/switcherapi/feature-flag-benchmark</url>
+	<url>https://github.com/switcherapi/client-java-benchmark</url>
 
 	<developers>
 		<developer>
@@ -38,26 +38,19 @@
 			<artifactId>jmh-generator-annprocess</artifactId>
 			<version>${jmh.version}</version>
 		</dependency>
-		
-		<!-- required by Switcher Client (resolve conflicts with Optimizely) -->
-		<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-annotations</artifactId>
-		    <version>2.15.1</version>
-		</dependency>
 
 		<!-- Switcher Client SDK -->
 		<dependency>
 			<groupId>com.github.switcherapi</groupId>
 			<artifactId>switcher-client</artifactId>
-			<version>2.2.2</version>
+			<version>2.3.1</version>
 		</dependency>
 
 		<!-- Unleash SDK -->
 		<dependency>
 			<groupId>io.getunleash</groupId>
 			<artifactId>unleash-client-java</artifactId>
-			<version>9.2.6</version>
+			<version>11.0.0</version>
 		</dependency>
 
 		<!-- Togglz -->
@@ -71,20 +64,20 @@
 	    <dependency>
 	        <groupId>io.split.client</groupId>
 	        <artifactId>java-client</artifactId>
-	        <version>4.13.1</version>
+	        <version>4.16.0</version>
 	    </dependency>
 	    
 	    <!-- Optimizely -->
 	    <dependency>
 		    <groupId>com.optimizely.ab</groupId>
 		    <artifactId>core-api</artifactId>
-		    <version>4.2.0</version>
+		    <version>4.2.2</version>
 	    </dependency>
 
 		<dependency>
 			<groupId>com.optimizely.ab</groupId>
 			<artifactId>core-httpclient-impl</artifactId>
-			<version>4.2.0</version>
+			<version>4.2.2</version>
 		</dependency>
 
 		<!-- Harness -->
@@ -100,7 +93,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.13.0</version>
+				<version>3.14.0</version>
 				<configuration>
 					<compilerVersion>${javac.target}</compilerVersion>
 					<source>${javac.target}</source>
@@ -110,7 +103,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
-				<version>3.5.3</version>
+				<version>3.6.0</version>
 				<executions>
 					<execution>
 						<phase>package</phase>

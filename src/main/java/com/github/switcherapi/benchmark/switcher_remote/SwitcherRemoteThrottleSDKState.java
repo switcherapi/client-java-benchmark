@@ -25,7 +25,7 @@ public class SwitcherRemoteThrottleSDKState {
 				.component("benchmark"));
 
 		initializeClient();
-		switcher = getSwitcher(MY_ONLINE_SWITCHER).throttle(5000).build();
+		switcher = getSwitcher(MY_ONLINE_SWITCHER).throttle(5000);
     }
 	
 	public void run() {
