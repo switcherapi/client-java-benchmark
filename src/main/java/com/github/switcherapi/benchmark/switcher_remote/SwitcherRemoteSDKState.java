@@ -1,8 +1,8 @@
 package com.github.switcherapi.benchmark.switcher_remote;
 
 import com.github.switcherapi.benchmark.Fail;
-import com.github.switcherapi.client.ContextBuilder;
-import com.github.switcherapi.client.model.Switcher;
+import com.switcherapi.client.ContextBuilder;
+import com.switcherapi.client.model.Switcher;
 import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;

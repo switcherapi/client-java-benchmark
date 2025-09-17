@@ -1,15 +1,15 @@
 package com.github.switcherapi.benchmark.switcher_local;
 
 import com.github.switcherapi.benchmark.Fail;
-import com.github.switcherapi.client.ContextBuilder;
-import com.github.switcherapi.client.model.SwitcherBuilder;
+import com.switcherapi.client.ContextBuilder;
+import com.switcherapi.client.model.SwitcherBuilder;
 import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 
 import static com.github.switcherapi.benchmark.switcher_local.Features.MY_SWITCHER;
-import static com.github.switcherapi.client.SwitcherContextBase.*;
+import static com.switcherapi.client.SwitcherContextBase.*;
 
 @State(Scope.Benchmark)
 public class SwitcherLocalSDKState {

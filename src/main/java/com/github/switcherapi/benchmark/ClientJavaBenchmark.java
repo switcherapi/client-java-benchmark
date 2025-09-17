@@ -1,5 +1,7 @@
 package com.github.switcherapi.benchmark;
 
+import com.github.switcherapi.benchmark.amplitude.AmplitudeExperimentSDKLocalState;
+import com.github.switcherapi.benchmark.amplitude.AmplitudeExperimentSDKRemoteState;
 import com.github.switcherapi.benchmark.harness.HarnessSDKState;
 import com.github.switcherapi.benchmark.optimizely.OptimizelySDKState;
 import com.github.switcherapi.benchmark.split.SplitSDKState;
@@ -49,6 +51,16 @@ public class ClientJavaBenchmark {
 
 	@Benchmark
 	public void testHarness(HarnessSDKState state) {
+		state.run();
+	}
+
+	@Benchmark
+	public void testAmplitudeExperiment(AmplitudeExperimentSDKRemoteState state) {
+		state.run();
+	}
+
+	@Benchmark
+	public void testAmplitudeExperimentLocal(AmplitudeExperimentSDKLocalState state) {
 		state.run();
 	}
 

@@ -1,7 +1,7 @@
 package com.github.switcherapi.benchmark.switcher_local;
 
-import com.github.switcherapi.client.SwitcherContextBase;
-import com.github.switcherapi.client.SwitcherKey;
+import com.switcherapi.client.SwitcherContextBase;
+import com.switcherapi.client.SwitcherKey;
 
 public class Features extends SwitcherContextBase {
 	
