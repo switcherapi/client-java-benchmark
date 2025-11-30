@@ -1,27 +1,25 @@
 {
-  "data": {
-    "domain": {
-      "name": "Playground",
-      "version": 1653971338700,
-      "group": [
-        {
-          "name": "Release 1",
-          "config": [
-            {
-              "key": "MY_SWITCHER",
-              "components": [
-                "switcher-playground"
-              ],
-              "description": "My first switcher",
-              "activated": true
-            }
-          ],
-          "description": "Showcase configuration structure",
-          "activated": true
-        }
-      ],
-      "description": "My playground",
-      "activated": true
-    }
+  "domain": {
+    "name": "Playground",
+    "version": 1653971338700,
+    "group": [
+      {
+        "name": "Release 1",
+        "config": [
+          {
+            "key": "MY_SWITCHER",
+            "components": [
+              "switcher-playground"
+            ],
+            "description": "My first switcher",
+            "activated": true
+          }
+        ],
+        "description": "Showcase configuration structure",
+        "activated": true
+      }
+    ],
+    "description": "My playground",
+    "activated": true
   }
 }
