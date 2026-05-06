@@ -37,7 +37,7 @@ public class HarnessSDKState {
     public void run() {
         boolean result = cfClient.boolVariation("feature_flag", target, false);
 
-        if (result) {
+        if (!result) {
             throw new Fail();
         }
     }
