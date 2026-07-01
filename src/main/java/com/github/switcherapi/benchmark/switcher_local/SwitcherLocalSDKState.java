@@ -34,7 +34,7 @@ public class SwitcherLocalSDKState {
 		}
 	}
 	
-	public static void main(String[] args) {
+	static void main() {
 		SwitcherLocalSDKState state = new SwitcherLocalSDKState();
 		state.doSetup();
 		state.run();

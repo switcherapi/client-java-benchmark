@@ -20,7 +20,7 @@ public class SwitcherRemoteSDKState {
 		configure(ContextBuilder.builder()
 				.context(Features.class.getName())
 				.url("https://api.switcherapi.com")
-				.apiKey("[API_KEY]")
+				.apiKey(System.getenv("SWITCHER_API_KEY"))
 				.domain("Playground")
 				.component("benchmark"));
 		
@@ -34,7 +34,7 @@ public class SwitcherRemoteSDKState {
         }
 	}
 	
-	public static void main(String[] args) {
+	static void main() {
 		SwitcherRemoteSDKState state = new SwitcherRemoteSDKState();
 		state.doSetup();
 		state.run();

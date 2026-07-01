@@ -30,7 +30,7 @@ public class TogglzSDKState {
 		}
 	}
 	
-	public static void main(String[] args) {
+	static void main() {
 		TogglzSDKState state = new TogglzSDKState();
 		state.doSetup();
 		state.run();

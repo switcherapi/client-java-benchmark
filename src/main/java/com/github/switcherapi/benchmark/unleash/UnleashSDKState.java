@@ -32,7 +32,7 @@ public class UnleashSDKState {
 		}
 	}
 	
-	public static void main(String[] args) {
+	static void main() {
 		UnleashSDKState state = new UnleashSDKState();
 		state.doSetup();
 		state.run();

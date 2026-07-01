@@ -30,9 +30,9 @@ public class SplitSDKState {
                 .build();
 		
 		try {
-			SplitFactory splitFactory = SplitFactoryBuilder.build("[API_KEY]", config);
+			SplitFactory splitFactory = SplitFactoryBuilder.build(System.getenv("SPLIT_API_KEY"), config);
 			client = splitFactory.client();
-		} catch (IOException | URISyntaxException e) {
+		} catch (IOException | URISyntaxException _) {
 			throw new Fail();
 		}
     }
@@ -48,7 +48,7 @@ public class SplitSDKState {
 		}
 	}
 	
-	public static void main(String[] args) {
+	static void main() {
 		SplitSDKState state = new SplitSDKState();
 		state.doSetup();
 		state.run();

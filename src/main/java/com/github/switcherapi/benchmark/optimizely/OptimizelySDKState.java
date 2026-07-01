@@ -16,7 +16,7 @@ public class OptimizelySDKState {
 	
 	@Setup(Level.Trial)
     public void doSetup() {
-		optimizelyClient = OptimizelyFactory.newDefaultInstance("[API_KEY]");
+		optimizelyClient = OptimizelyFactory.newDefaultInstance(System.getenv("OPTIMIZELY_SDK_KEY"));
 		if (optimizelyClient.isValid()) {
 			user = optimizelyClient.createUserContext("1");
 		}
@@ -35,7 +35,7 @@ public class OptimizelySDKState {
 		}
 	}
 	
-	public static void main(String[] args) {
+	static void main() {
 		OptimizelySDKState state = new OptimizelySDKState();
 		state.doSetup();
 		state.run();

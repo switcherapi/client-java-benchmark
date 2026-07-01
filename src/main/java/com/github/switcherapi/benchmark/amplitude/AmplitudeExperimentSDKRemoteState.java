@@ -21,7 +21,7 @@ public class AmplitudeExperimentSDKRemoteState {
 	
 	@Setup(Level.Trial)
     public void doSetup() {
-		experiment = Experiment.initializeRemote("[API_KEY]");
+		experiment = Experiment.initializeRemote(System.getenv("AMPLITUDE_EXPERIMENT_SDK_KEY"));
 		user = ExperimentUser.builder()
 				.userId("user1")
 				.deviceId("user1")
@@ -37,13 +37,13 @@ public class AmplitudeExperimentSDKRemoteState {
 			if (!Variant.valueEquals(variant, "on")) {
 				throw new Fail();
 			}
-		} catch (InterruptedException | ExecutionException e) {
+		} catch (InterruptedException | ExecutionException _) {
 			Thread.currentThread().interrupt();
 			throw new Fail();
 		}
 	}
 	
-	public static void main(String[] args) {
+	static void main() {
 		AmplitudeExperimentSDKRemoteState state = new AmplitudeExperimentSDKRemoteState();
 		state.doSetup();
 		state.run();

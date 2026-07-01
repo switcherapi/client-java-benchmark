@@ -18,7 +18,7 @@ public class HarnessSDKState {
     @Setup(Level.Trial)
     public void doSetup() {
         try {
-            cfClient = new CfClient("[API_KEY]");
+            cfClient = new CfClient(System.getenv("HARNESS_API_KEY"));
             cfClient.waitForInitialization();
 
             target = Target.builder()
@@ -26,9 +26,9 @@ public class HarnessSDKState {
                 .name("JavaSDK")
                 .attribute("location", "emea")
                 .build();
-        } catch (FeatureFlagInitializeException e) {
+        } catch (FeatureFlagInitializeException _) {
             throw new Fail();
-        } catch (InterruptedException e) {
+        } catch (InterruptedException _) {
             Thread.currentThread().interrupt();
             throw new Fail();
         }
@@ -42,7 +42,7 @@ public class HarnessSDKState {
         }
     }
 
-    public static void main(String[] args) {
+    static void main() {
         HarnessSDKState state = new HarnessSDKState();
         state.doSetup();
         state.run();

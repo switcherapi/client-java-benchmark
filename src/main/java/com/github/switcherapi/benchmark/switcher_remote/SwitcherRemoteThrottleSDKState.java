@@ -20,12 +20,12 @@ public class SwitcherRemoteThrottleSDKState {
 		configure(ContextBuilder.builder()
 				.context(Features.class.getName())
 				.url("https://api.switcherapi.com")
-				.apiKey("[API_KEY]")
+				.apiKey(System.getenv("SWITCHER_API_KEY"))
 				.domain("Playground")
 				.component("benchmark"));
 
 		initializeClient();
-		switcher = getSwitcher(MY_ONLINE_SWITCHER).throttle(5000);
+		switcher = getSwitcher(MY_ONLINE_SWITCHER).throttle(1000);
     }
 	
 	public void run() {
@@ -34,7 +34,7 @@ public class SwitcherRemoteThrottleSDKState {
 		}
 	}
 	
-	public static void main(String[] args) {
+	static void main() {
 		SwitcherRemoteThrottleSDKState state = new SwitcherRemoteThrottleSDKState();
 		state.doSetup();
 		state.run();

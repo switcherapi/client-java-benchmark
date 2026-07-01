@@ -20,7 +20,7 @@ public class AmplitudeExperimentSDKLocalState {
 	
 	@Setup(Level.Trial)
     public void doSetup() {
-		experiment = Experiment.initializeLocal("[API_KEY]");
+		experiment = Experiment.initializeLocal(System.getenv("AMPLITUDE_EXPERIMENT_SDK_KEY"));
 		user = ExperimentUser.builder()
 				.userId("user1")
 				.deviceId("user1")
@@ -39,7 +39,7 @@ public class AmplitudeExperimentSDKLocalState {
 		}
 	}
 	
-	public static void main(String[] args) {
+	static void main() {
 		AmplitudeExperimentSDKLocalState state = new AmplitudeExperimentSDKLocalState();
 		state.doSetup();
 		state.run();

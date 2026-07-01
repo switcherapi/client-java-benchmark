@@ -12,7 +12,6 @@ import com.github.switcherapi.benchmark.togglz.TogglzSDKState;
 import com.github.switcherapi.benchmark.unleash.UnleashSDKState;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
-import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
@@ -79,12 +78,17 @@ public class ClientJavaBenchmark {
 		state.run();
     }
 	
-    public static void main(String[] args) throws Exception {
-    	Options opt = new OptionsBuilder()
-                .include(ClientJavaBenchmark.class.getSimpleName())
-                .build();
-    	
-    	new Runner(opt).run();
+    static void main() throws Exception {
+        var benchmark = System.getProperty("benchmark");
+        if (benchmark != null && !benchmark.isBlank()) {
+			var opt = new OptionsBuilder()
+					.include(String.format("%s.%s", ClientJavaBenchmark.class.getSimpleName(), benchmark))
+					.build();
+
+			new Runner(opt).run();
+        } else {
+            throw new IllegalArgumentException("Please provide a benchmark name using -Dbenchmark=<benchmarkName>");
+        }
     }
 
 }
