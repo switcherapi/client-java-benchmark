@@ -37,7 +37,7 @@ These tests are fully remote.
 | ClientJavaBenchmark.testOptimizely               | Async  | thrpt | 601,086.850     | ops/s |
 | ClientJavaBenchmark.testTogglz                   | Local  | thrpt | 393,263.446     | ops/s |
 | ClientJavaBenchmark.testUnleash                  | Local  | thrpt | 390,850.724     | ops/s |
-| ClientJavaBenchmark.testSwitcherRemote           | Remote | thrpt | 3,446.726       | ops/s |
+| ClientJavaBenchmark.testSwitcherRemote           | Remote | thrpt | 3,577.091       | ops/s |
 | ClientJavaBenchmark.testAmplitudeExperiment      | Remote | thrpt | 98.396          | ops/s |
 
 ### Switcher Client SDK:
@@ -56,7 +56,7 @@ These tests are fully remote.
 | ClientJavaBenchmark.testOptimizely               | avgt | 1,675.677      | ns/op |
 | ClientJavaBenchmark.testTogglz                   | avgt | 2,451.217      | ns/op |
 | ClientJavaBenchmark.testUnleash                  | avgt | 2,616.761      | ns/op |
-| ClientJavaBenchmark.testSwitcherRemote           | avgt | 313,660.701    | ns/op |
+| ClientJavaBenchmark.testSwitcherRemote           | avgt | 280,057.628    | ns/op |
 | ClientJavaBenchmark.testAmplitudeExperiment      | avgt | 10,039,482.766 | ns/op |
 
 ### Switcher Client SDK performance explained:
